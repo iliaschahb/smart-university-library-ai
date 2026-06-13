@@ -1,0 +1,51 @@
+book_id,goodreads_book_id,best_book_id,work_id,title,authors,original_publication_year,language_code,goodreads_average_rating,goodreads_ratings_count,rating_count,avg_user_rating,to_read_count,tag_count
+6361,70489,70489,170846,There's Treasure Everywhere: A Calvin and Hobbes Collection,Bill Watterson,1996.0,eng,4.74,16766,100,4.77,4,100
+3275,8,8,21457576,"Harry Potter Boxed Set, Books 1-5 (Harry Potter, #1-5)","J.K. Rowling, Mary GrandPré",2003.0,eng,4.77,33220,100,4.77,5,100
+6590,59715,59715,1010526,The Authoritative Calvin and Hobbes: A Calvin and Hobbes Treasury,Bill Watterson,1990.0,eng,4.73,16087,100,4.75,3,100
+5580,24494,24494,25344,The Calvin and Hobbes Lazy Sunday Book,Bill Watterson,1989.0,eng,4.66,18641,100,4.75,11,100
+4483,24814,24814,25601,It's a Magical World: A Calvin and Hobbes Collection,Bill Watterson,1996.0,eng,4.75,22351,100,4.75,3,100
+3628,24812,24812,25599,The Complete Calvin and Hobbes,Bill Watterson,2005.0,eng,4.82,28900,100,4.73,48,100
+8978,121792,121792,1429035,The Revenge of the Baby-Sat,Bill Watterson,1991.0,unknown,4.71,11503,100,4.73,3,100
+3753,10,10,21457570,"Harry Potter Collection (Harry Potter, #1-6)",J.K. Rowling,2005.0,eng,4.73,24618,100,4.72,7,100
+8109,23753,23753,1789924,"The Absolute Sandman, Volume One","Neil Gaiman, Mike Dringenberg, Chris Bachalo, Michael Zulli, Kelly Jones, Charles Vess, Colleen Doran, Malcolm Jones III, Steve Parkhouse, Daniel Vozzo, Lee Loughridge, Steve Oliff, Todd Klein, Dave McKean, Sam Kieth",2006.0,eng,4.65,13401,100,4.71,35,100
+9141,9329354,9329354,27679568,"The Way of Kings, Part 1 (The Stormlight Archive #1.1)",Brandon Sanderson,2011.0,eng,4.67,9792,100,4.69,31,100
+2244,17131869,17131869,23857485,"Saga, Vol. 2 (Saga, #2)","Brian K. Vaughan, Fiona Staples",2013.0,eng,4.57,56122,100,4.68,36,100
+4868,481749,481749,321161,Jesus the Christ,James E. Talmage,1915.0,unknown,4.63,17179,100,4.67,39,100
+4708,9832370,9832370,27881851,BookRags Summary:  A Storm of Swords,BookRags,0.0,eng,4.59,18960,100,4.66,18,100
+6642,13490570,13490570,19029792,"Locke & Key, Vol. 5: Clockworks","Joe Hill, Gabriel Rodríguez",2013.0,eng,4.5,16441,100,4.66,29,100
+7883,47697,47697,534309,The Sandman: King of Dreams,"Alisa Kwitney, Neil Gaiman",2003.0,eng,4.61,11538,100,4.65,45,100
+3395,71252,71252,2647,The Kindly Ones (The Sandman #9),"Neil Gaiman, Marc Hempel, Richard Case, D'Israeli, Teddy Kristiansen, Glyn Dillon, Charles Vess, Dean Ormston, Kevin Nowlan, Todd Klein, Frank McConnell",1996.0,eng,4.59,32544,100,4.65,58,100
+3660,25104,25104,2021847,The Wake (The Sandman #10),"Neil Gaiman, Michael Zulli, Jon J. Muth, Charles Vess, Mikal Gilmore",1996.0,eng,4.53,32360,100,4.65,54,100
+1904,18310944,18310944,27097530,The Sandman: Overture,"Neil Gaiman, J.H. Williams III, Dave Stewart, Todd Klein",2015.0,en-us,3.94,52973,100,4.65,99,100
+5991,334818,334818,929936,Miss Rumphius,Barbara Cooney,1981.0,eng,4.45,20403,100,4.61,11,100
+6527,28862528,28862528,48637040,"Saga, Vol. 6 (Saga, #6)","Brian K. Vaughan, Fiona Staples",2016.0,eng,4.49,18433,100,4.6,18,100
+1355,13027304,13027304,18190416,The Hunger Games Tribute Guide,Emily Seife,2012.0,en-us,4.4,67264,100,4.6,13,100
+1380,15195,15195,1658562,"The Complete Maus (Maus, #1-2)",Art Spiegelman,1986.0,en-gb,4.53,76785,100,4.59,131,100
+2101,99298,99298,5994366,"The Harry Potter Collection 1-4 (Harry Potter, #1-4)","J.K. Rowling, Mary GrandPré",1999.0,eng,4.66,43929,100,4.59,12,100
+4522,25451555,25451555,45216378,"Saga, Vol. 5 (Saga, #5)","Brian K. Vaughan, Fiona Staples",2015.0,eng,4.44,29429,100,4.59,22,100
+2093,7746259,7746259,10572064,The Stand: Soul Survivors,"Roberto Aguirre-Sacasa, Mike Perkins, Laura       Martin, Stephen King",2010.0,en-gb,4.52,40626,100,4.59,16,100
+3054,2223324,2223324,498223,Harry Potter and the Chamber of Secrets: Sheet Music for Flute with C.D,John   Williams,2003.0,unknown,4.61,29409,100,4.57,6,100
+2353,25101,25101,25854,Season of Mists (The Sandman #4),"Neil Gaiman, Matt Wagner, George Pratt, Dick Giordano, Kelley Jones, P. Craig Russell, Mike Dringenberg, Malcolm Jones III, Todd Klein, Harlan Ellison",1990.0,eng,4.54,44811,100,4.56,70,100
+192,186074,186074,2502879,"The Name of the Wind (The Kingkiller Chronicle, #1)",Patrick Rothfuss,2007.0,eng,4.55,400101,100,4.56,1050,100
+2937,25102,25102,810826,A Game of You (The Sandman #5),"Neil Gaiman, Shawn McManus, Colleen Doran, Bryan Talbot, George Pratt, Stan Woch, Dick Giordano, Todd Klein",1993.0,eng,4.43,37211,100,4.56,43,100
+3082,25105,25105,40666827,Brief Lives (The Sandman #7),"Neil Gaiman, Jill Thompson, Vince Locke, Peter Straub",1994.0,eng,4.55,36487,100,4.55,54,100
+3030,8718952,8718952,21984483,"Vampire Academy Box Set (Vampire Academy, #1-4)",Richelle Mead,2010.0,en-us,4.57,33015,100,4.55,16,100
+3885,29780253,29780253,50150838,Born a Crime: Stories From a South African Childhood,Trevor Noah,2016.0,eng,4.49,42573,100,4.55,139,100
+780,77727,77727,2110010,Calvin and Hobbes,"Bill Watterson, G.B. Trudeau",1987.0,en-us,4.61,117788,100,4.55,29,100
+3086,25106,25106,181895,Fables and Reflections (The Sandman #6),"Neil Gaiman, Bryan Talbot, Stan Woch, P. Craig Russell, Shawn McManus, John Watkiss, Jill Thompson, Duncan Eagleson, Kent Williams, Todd Klein",1990.0,eng,4.45,35930,100,4.54,53,100
+3358,841628,841628,13319085,The Hitchhiker's Guide to the Galaxy: A Trilogy in Four Parts,Douglas Adams,1986.0,eng,4.51,27855,100,4.54,13,100
+2767,19358975,19358975,27422060,"Saga, Vol. 3 (Saga, #3)","Brian K. Vaughan, Fiona Staples",2014.0,eng,4.56,47549,100,4.54,38,100
+1029,15704307,15704307,19113524,"Saga, Vol. 1 (Saga, #1)","Brian K. Vaughan, Fiona Staples",2012.0,eng,4.25,131906,100,4.54,116,100
+4336,17717,17717,376514,Labyrinths:  Selected Stories and Other Writings,"Jorge Luis Borges, Donald A. Yates, James E. Irby, André Maurois",1962.0,eng,4.46,20237,100,4.53,83,100
+1895,25099,25099,2648,The Doll's House (The Sandman #2),"Neil Gaiman, Steve Parkhouse, Chris Bachalo, Michael Zulli, Mike Dringenberg, Malcolm Jones III, Todd Klein, Clive Barker",1990.0,eng,4.44,54420,100,4.53,71,100
+2865,47558,47558,3211551,"The Gashlycrumb Tinies (The Vinegar Works, #1)",Edward Gorey,1963.0,eng,4.23,37054,100,4.53,70,100
+2149,9814682,9814682,21619517,"A Song of Ice and Fire (A Song of Ice and Fire, #1-4)",George R.R. Martin,2011.0,en-us,4.63,28654,100,4.53,45,100
+2527,12177850,12177850,21619530,"A Song of Ice and Fire (A Song of Ice and Fire, #1-5)",George R.R. Martin,2000.0,eng,4.63,20567,100,4.53,32,100
+4229,36,36,4414,The Lord of the Rings: Weapons and Warfare,"Chris   Smith, Christopher Lee, Richard Taylor",0.0,eng,4.53,18788,100,4.53,8,100
+1010,43070,43070,2244438,The Essential Calvin and Hobbes: A Calvin and Hobbes Treasury,Bill Watterson,1988.0,en-us,4.65,93001,100,4.53,34,100
+7696,821000,821000,1359963,"Now We Are Six (Winnie-the-Pooh, #4)","A.A. Milne, Ernest H. Shepard",1927.0,eng,4.38,15840,100,4.53,2,100
+4653,14905,14905,2494662,The Complete Novels,Jane Austen,1813.0,eng,4.55,18828,100,4.52,30,100
+9360,71823,71823,9813536,"The Green Mile, Part 6: Coffey on the Mile",Stephen King,1996.0,eng,4.55,11936,100,4.52,4,100
+7593,5986375,5986375,6160130,"This Is Water: Some Thoughts, Delivered on a Significant Occasion, about Living a Compassionate Life",David Foster Wallace,2009.0,eng,4.53,13312,100,4.52,29,100
+3396,25103,25103,1009277,Worlds' End (The Sandman #8),"Neil Gaiman, Mike Allred, Gary Amaro, Mark Buckingham, David Giordano, Tony Harris, Steve Leialoha, Vince Locke, Shea Anton Pensa, Alec Stevens, Bryan Talbot, John Watkiss, Todd Klein, Michael Zulli, Stephen King",1995.0,eng,4.48,32362,100,4.52,59,100
+8829,228194,228194,9813429,"The Green Mile, Part 2: The Mouse on the Mile",Stephen King,1996.0,eng,4.47,11985,100,4.51,4,100

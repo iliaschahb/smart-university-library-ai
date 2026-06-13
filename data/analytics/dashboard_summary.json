@@ -1,0 +1,219 @@
+{
+  "total_books": 10000,
+  "total_ratings": 980112,
+  "total_users": 53424,
+  "total_to_read": 912705,
+  "total_tags_used": 34244,
+  "top_books": [
+    {
+      "book_id": 27,
+      "title": "Harry Potter and the Half-Blood Prince (Harry Potter, #6)",
+      "authors": "J.K. Rowling, Mary GrandPré",
+      "rating_count": 100,
+      "avg_user_rating": 4.16,
+      "to_read_count": 438
+    },
+    {
+      "book_id": 1105,
+      "title": "Dune Messiah (Dune Chronicles #2)",
+      "authors": "Frank Herbert",
+      "rating_count": 100,
+      "avg_user_rating": 3.7,
+      "to_read_count": 62
+    },
+    {
+      "book_id": 2,
+      "title": "Harry Potter and the Sorcerer's Stone (Harry Potter, #1)",
+      "authors": "J.K. Rowling, Mary GrandPré",
+      "rating_count": 100,
+      "avg_user_rating": 4.21,
+      "to_read_count": 400
+    },
+    {
+      "book_id": 1224,
+      "title": "The Elegant Universe: Superstrings, Hidden Dimensions, and the Quest for the Ultimate Theory",
+      "authors": "Brian Greene",
+      "rating_count": 100,
+      "avg_user_rating": 4.0,
+      "to_read_count": 151
+    },
+    {
+      "book_id": 18,
+      "title": "Harry Potter and the Prisoner of Azkaban (Harry Potter, #3)",
+      "authors": "J.K. Rowling, Mary GrandPré, Rufus Beck",
+      "rating_count": 100,
+      "avg_user_rating": 4.16,
+      "to_read_count": 428
+    },
+    {
+      "book_id": 1262,
+      "title": "Children of Dune (Dune Chronicles #3)",
+      "authors": "Frank Herbert",
+      "rating_count": 100,
+      "avg_user_rating": 3.82,
+      "to_read_count": 55
+    },
+    {
+      "book_id": 24,
+      "title": "Harry Potter and the Goblet of Fire (Harry Potter, #4)",
+      "authors": "J.K. Rowling, Mary GrandPré",
+      "rating_count": 100,
+      "avg_user_rating": 4.21,
+      "to_read_count": 431
+    },
+    {
+      "book_id": 3275,
+      "title": "Harry Potter Boxed Set, Books 1-5 (Harry Potter, #1-5)",
+      "authors": "J.K. Rowling, Mary GrandPré",
+      "rating_count": 100,
+      "avg_user_rating": 4.77,
+      "to_read_count": 5
+    },
+    {
+      "book_id": 3753,
+      "title": "Harry Potter Collection (Harry Potter, #1-6)",
+      "authors": "J.K. Rowling",
+      "rating_count": 100,
+      "avg_user_rating": 4.72,
+      "to_read_count": 7
+    },
+    {
+      "book_id": 1597,
+      "title": "The Power of One (The Power of One, #1)",
+      "authors": "Bryce Courtenay",
+      "rating_count": 100,
+      "avg_user_rating": 4.42,
+      "to_read_count": 147
+    }
+  ],
+  "top_tags": [
+    {
+      "tag_name": "to-read",
+      "usage_count": 9983
+    },
+    {
+      "tag_name": "favorites",
+      "usage_count": 9881
+    },
+    {
+      "tag_name": "owned",
+      "usage_count": 9858
+    },
+    {
+      "tag_name": "books-i-own",
+      "usage_count": 9799
+    },
+    {
+      "tag_name": "currently-reading",
+      "usage_count": 9776
+    },
+    {
+      "tag_name": "library",
+      "usage_count": 9415
+    },
+    {
+      "tag_name": "owned-books",
+      "usage_count": 9221
+    },
+    {
+      "tag_name": "fiction",
+      "usage_count": 9097
+    },
+    {
+      "tag_name": "to-buy",
+      "usage_count": 8692
+    },
+    {
+      "tag_name": "kindle",
+      "usage_count": 8316
+    }
+  ],
+  "rating_distribution": [
+    {
+      "rating": 1,
+      "count": 19546
+    },
+    {
+      "rating": 2,
+      "count": 63177
+    },
+    {
+      "rating": 3,
+      "count": 248318
+    },
+    {
+      "rating": 4,
+      "count": 356854
+    },
+    {
+      "rating": 5,
+      "count": 292217
+    }
+  ],
+  "user_activity": [
+    {
+      "user_id": 12874,
+      "ratings_given": 200,
+      "avg_rating_given": 3.45
+    },
+    {
+      "user_id": 30944,
+      "ratings_given": 200,
+      "avg_rating_given": 4.21
+    },
+    {
+      "user_id": 28158,
+      "ratings_given": 199,
+      "avg_rating_given": 3.9396984924623117
+    },
+    {
+      "user_id": 12381,
+      "ratings_given": 199,
+      "avg_rating_given": 3.4271356783919598
+    },
+    {
+      "user_id": 52036,
+      "ratings_given": 199,
+      "avg_rating_given": 3.442211055276382
+    },
+    {
+      "user_id": 45554,
+      "ratings_given": 197,
+      "avg_rating_given": 4.030456852791878
+    },
+    {
+      "user_id": 6630,
+      "ratings_given": 197,
+      "avg_rating_given": 3.5736040609137056
+    },
+    {
+      "user_id": 37834,
+      "ratings_given": 196,
+      "avg_rating_given": 4.13265306122449
+    },
+    {
+      "user_id": 7563,
+      "ratings_given": 196,
+      "avg_rating_given": 3.5
+    },
+    {
+      "user_id": 9668,
+      "ratings_given": 196,
+      "avg_rating_given": 3.8418367346938775
+    }
+  ],
+  "popularity_levels": [
+    {
+      "popularity_level": "moyenne",
+      "count": 126
+    },
+    {
+      "popularity_level": "élevée",
+      "count": 4
+    },
+    {
+      "popularity_level": "faible",
+      "count": 9870
+    }
+  ]
+}

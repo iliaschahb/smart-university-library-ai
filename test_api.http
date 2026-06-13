@@ -1,0 +1,179 @@
+### Accueil
+GET http://localhost:5000/
+
+###
+
+### Vérification santé API
+GET http://localhost:5000/health
+
+###############################################################################
+# CATEGORIES
+###############################################################################
+
+###
+
+### Récupérer toutes les catégories
+GET http://localhost:5000/categories
+
+###
+
+### Récupérer une catégorie
+GET http://localhost:5000/categories/1
+
+###
+
+### Ajouter une catégorie
+POST http://localhost:5000/categories
+Content-Type: application/json
+
+{
+  "name": "NLP",
+  "description": "Traitement automatique du langage naturel"
+}
+
+###############################################################################
+# BOOKS
+###############################################################################
+
+###
+
+### Récupérer tous les livres
+GET http://localhost:5000/books
+
+###
+
+### Récupérer un seul livre
+GET http://localhost:5000/books/1
+
+###
+
+### Ajouter un livre
+POST http://localhost:5000/books
+Content-Type: application/json
+
+{
+  "title": "NLP avec Python",
+  "author": "Auteur Test",
+  "isbn": "978000000010",
+  "category_id": 1,
+  "publication_year": 2024,
+  "quantity": 3
+}
+
+###
+
+### Modifier un livre
+PUT http://localhost:5000/books/1
+Content-Type: application/json
+
+{
+  "title": "Introduction à l'intelligence artificielle - Edition mise à jour",
+  "author": "Jean Dupont",
+  "isbn": "978000000001",
+  "category_id": 1,
+  "publication_year": 2025,
+  "quantity": 6,
+  "available_quantity": 5
+}
+
+###
+
+### Supprimer un livre
+DELETE http://localhost:5000/books/5
+
+###############################################################################
+# STUDENTS
+###############################################################################
+
+###
+
+### Récupérer tous les étudiants
+GET http://localhost:5000/students
+
+###
+
+### Récupérer un étudiant
+GET http://localhost:5000/students/1
+
+###
+
+### Ajouter un étudiant
+POST http://localhost:5000/students
+Content-Type: application/json
+
+{
+  "full_name": "Amine El Idrissi",
+  "email": "amine@student.ma",
+  "department": "Informatique",
+  "level": "Licence 3",
+  "password_hash": "hashed_password_test"
+}
+
+###
+
+### Modifier un étudiant
+PUT http://localhost:5000/students/1
+Content-Type: application/json
+
+{
+  "full_name": "Ilias Chahboun Updated",
+  "email": "ilias.updated@student.ma",
+  "department": "Big Data",
+  "level": "Licence 3"
+}
+
+###
+
+### Supprimer un étudiant
+DELETE http://localhost:5000/students/2
+
+###############################################################################
+# LOANS
+###############################################################################
+
+###
+
+### Récupérer tous les emprunts
+GET http://localhost:5000/loans
+
+###
+
+### Récupérer un emprunt
+GET http://localhost:5000/loans/1
+
+###
+
+### Enregistrer un emprunt
+POST http://localhost:5000/loans
+Content-Type: application/json
+
+{
+  "student_id": 1,
+  "book_id": 4,
+  "borrow_date": "2026-06-11",
+  "due_date": "2026-06-25"
+}
+
+###
+
+### Retourner un livre
+PUT http://localhost:5000/loans/1/return
+Content-Type: application/json
+
+{
+  "return_date": "2026-06-20"
+}
+
+###
+
+### Voir les emprunts en retard
+GET http://localhost:5000/loans/late
+
+###############################################################################
+# DASHBOARD
+###############################################################################
+
+###
+
+### Résumé dashboard
+GET http://localhost:5000/dashboard/summary

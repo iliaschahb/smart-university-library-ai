@@ -1,0 +1,55 @@
+{
+  "total_books": 10000,
+  "total_ratings": 981756,
+  "total_users": 53424,
+  "total_to_read": 912705,
+  "top_books": [
+    {
+      "book_id": 148,
+      "rating_count": 100,
+      "avg_rating": 3.57
+    },
+    {
+      "book_id": 463,
+      "rating_count": 100,
+      "avg_rating": 3.99
+    },
+    {
+      "book_id": 471,
+      "rating_count": 100,
+      "avg_rating": 3.84
+    },
+    {
+      "book_id": 496,
+      "rating_count": 100,
+      "avg_rating": 3.79
+    },
+    {
+      "book_id": 833,
+      "rating_count": 100,
+      "avg_rating": 3.44
+    }
+  ],
+  "top_tags": [
+    {
+      "tag_name": "to-read",
+      "usage_count": 9983
+    },
+    {
+      "tag_name": "favorites",
+      "usage_count": 9881
+    },
+    {
+      "tag_name": "owned",
+      "usage_count": 9858
+    },
+    {
+      "tag_name": "books-i-own",
+      "usage_count": 9799
+    },
+    {
+      "tag_name": "currently-reading",
+      "usage_count": 9776
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "books": {
+    "file": "/workspaces/smart-university-library-ai/data/raw/goodbooks-10k/books.csv",
+    "rows": 10000,
+    "columns": [
+      "id",
+      "book_id",
+      "best_book_id",
+      "work_id",
+      "books_count",
+      "isbn",
+      "isbn13",
+      "authors",
+      "original_publication_year",
+      "original_title",
+      "title",
+      "language_code",
+      "average_rating",
+      "ratings_count",
+      "work_ratings_count",
+      "work_text_reviews_count",
+      "ratings_1",
+      "ratings_2",
+      "ratings_3",
+      "ratings_4",
+      "ratings_5",
+      "image_url",
+      "small_image_url"
+    ]
+  },
+  "ratings": {
+    "file": "/workspaces/smart-university-library-ai/data/raw/goodbooks-10k/ratings.csv",
+    "rows": 981756,
+    "columns": [
+      "book_id",
+      "user_id",
+      "rating"
+    ]
+  },
+  "tags": {
+    "file": "/workspaces/smart-university-library-ai/data/raw/goodbooks-10k/tags.csv",
+    "rows": 34252,
+    "columns": [
+      "tag_id",
+      "tag_name"
+    ]
+  },
+  "book_tags": {
+    "file": "/workspaces/smart-university-library-ai/data/raw/goodbooks-10k/book_tags.csv",
+    "rows": 999912,
+    "columns": [
+      "goodreads_book_id",
+      "tag_id",
+      "count"
+    ]
+  },
+  "to_read": {
+    "file": "/workspaces/smart-university-library-ai/data/raw/goodbooks-10k/to_read.csv",
+    "rows": 912705,
+    "columns": [
+      "user_id",
+      "book_id"
+    ]
+  }
+}
