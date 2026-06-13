@@ -10,7 +10,7 @@ from routes.categories_routes import categories_bp
 from routes.dashboard_routes import dashboard_bp
 from routes.bigdata_routes import bigdata_bp
 from seed_data import seed_database
-
+from routes.ml_routes import ml_bp
 app = Flask(__name__)
 app.config.from_object(Config)
 
@@ -28,7 +28,7 @@ app.register_blueprint(loans_bp)
 app.register_blueprint(categories_bp)
 app.register_blueprint(dashboard_bp)
 app.register_blueprint(bigdata_bp)
-
+app.register_blueprint(ml_bp)
 @app.route("/")
 def home():
     return jsonify({
