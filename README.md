@@ -2,7 +2,7 @@
 
 ## Description
 
-Smart University Library AI est une plateforme intelligente destinée à la gestion, l’analyse et la recommandation de livres dans une bibliothèque universitaire.
+Plateforme Big Data & IA pour l’analyse intelligente des comportements de lecture et la recommandation de livres dans une bibliothèque universitaire
 
 Le projet combine :
 

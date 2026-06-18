@@ -20,8 +20,8 @@
     "moyenne": 126,
     "élevée": 4
   },
-  "accuracy": 0.9995,
-  "balanced_accuracy": 0.6666666666666666,
+  "accuracy": 1.0,
+  "balanced_accuracy": 1.0,
   "classification_report": {
     "faible": {
       "precision": 1.0,
@@ -30,28 +30,28 @@
       "support": 1974.0
     },
     "moyenne": {
-      "precision": 0.9615384615384616,
+      "precision": 1.0,
       "recall": 1.0,
-      "f1-score": 0.9803921568627451,
+      "f1-score": 1.0,
       "support": 25.0
     },
     "élevée": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1-score": 0.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
       "support": 1.0
     },
-    "accuracy": 0.9995,
+    "accuracy": 1.0,
     "macro avg": {
-      "precision": 0.6538461538461539,
-      "recall": 0.6666666666666666,
-      "f1-score": 0.6601307189542484,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
       "support": 2000.0
     },
     "weighted avg": {
-      "precision": 0.9990192307692307,
-      "recall": 0.9995,
-      "f1-score": 0.9992549019607843,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
       "support": 2000.0
     }
   },
@@ -68,38 +68,38 @@
     ],
     [
       0,
-      1,
-      0
+      0,
+      1
     ]
   ],
   "feature_importance": [
     {
       "feature": "popularity_score",
-      "importance": 0.3495525067414152
+      "importance": 0.3464803082790055
     },
     {
       "feature": "goodreads_ratings_count",
-      "importance": 0.3351998708831267
+      "importance": 0.34230204571970707
     },
     {
       "feature": "to_read_count",
-      "importance": 0.17472862137277304
+      "importance": 0.1759645744501627
     },
     {
       "feature": "avg_user_rating",
-      "importance": 0.07881065442337003
+      "importance": 0.07463872294285218
     },
     {
       "feature": "goodreads_average_rating",
-      "importance": 0.053332067711535924
+      "importance": 0.05078887252020122
     },
     {
       "feature": "rating_count",
-      "importance": 0.00837627886777922
+      "importance": 0.00982510755690964
     },
     {
       "feature": "tag_count",
-      "importance": 3.798561279713183e-18
+      "importance": 3.6853116182419065e-07
     }
   ],
   "model_file": "/workspaces/smart-university-library-ai/backend/ml/models/popularity_model.joblib"

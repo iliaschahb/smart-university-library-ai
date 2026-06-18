@@ -1,0 +1,73 @@
+{
+  "model_type": "RandomForestRegressor",
+  "dataset_rows": 10000,
+  "features": [
+    "publication_year",
+    "average_rating",
+    "ratings_count",
+    "work_ratings_count",
+    "global_popularity_score",
+    "to_read_count",
+    "tag_count",
+    "local_loan_count",
+    "local_active_loan_count",
+    "local_late_count",
+    "quantity",
+    "available_quantity"
+  ],
+  "target": "demand_score",
+  "mae": 7.405397431442898,
+  "rmse": 40.48567487492785,
+  "r2": 0.999716387685548,
+  "feature_importance": [
+    {
+      "feature": "global_popularity_score",
+      "importance": 0.9991247537378218
+    },
+    {
+      "feature": "ratings_count",
+      "importance": 0.00033111809227350214
+    },
+    {
+      "feature": "local_loan_count",
+      "importance": 0.0002474633819250222
+    },
+    {
+      "feature": "work_ratings_count",
+      "importance": 0.00021509764327962895
+    },
+    {
+      "feature": "average_rating",
+      "importance": 1.516952786557501e-05
+    },
+    {
+      "feature": "to_read_count",
+      "importance": 1.4764546030142872e-05
+    },
+    {
+      "feature": "publication_year",
+      "importance": 1.3429555621423705e-05
+    },
+    {
+      "feature": "available_quantity",
+      "importance": 1.3252763657194126e-05
+    },
+    {
+      "feature": "local_active_loan_count",
+      "importance": 8.949607915774617e-06
+    },
+    {
+      "feature": "quantity",
+      "importance": 8.010884669466372e-06
+    },
+    {
+      "feature": "local_late_count",
+      "importance": 5.657465502150892e-06
+    },
+    {
+      "feature": "tag_count",
+      "importance": 2.3327934382839018e-06
+    }
+  ],
+  "model_file": "/workspaces/smart-university-library-ai/backend/ml/models/hybrid_demand_model.joblib"
+}

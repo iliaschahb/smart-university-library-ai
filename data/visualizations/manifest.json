@@ -1,0 +1,13 @@
+{
+  "visualizations_dir": "/workspaces/smart-university-library-ai/data/visualizations",
+  "charts": [
+    "confusion_matrix.png",
+    "correlation_matrix.png",
+    "feature_importance.png",
+    "popularity_levels.png",
+    "rating_distribution.png",
+    "top_books.png",
+    "top_tags.png",
+    "user_activity.png"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "rows": 10000,
+  "books_with_local_loans": 744,
+  "total_local_loans": 1817,
+  "avg_global_popularity": 22771.594781798656,
+  "avg_demand_score": 22792.018781798655,
+  "output_csv": "/workspaces/smart-university-library-ai/data/analytics/hybrid_ai_dataset.csv"
+}

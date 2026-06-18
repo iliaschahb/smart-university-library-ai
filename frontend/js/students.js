@@ -1,1 +1,47 @@
-async function loadStudents(){const s=await apiGet("/students");studentsTableContainer.innerHTML=s.length?`<table class="table table-bordered table-striped"><tbody>${s.map(x=>`<tr><td>${x.id}</td><td>${x.full_name}</td><td>${x.email}</td><td><button class="btn btn-sm btn-danger" onclick="deleteStudent(${x.id})">Supprimer</button></td></tr>`).join("")}</tbody></table>`:"Aucun étudiant"}async function deleteStudent(id){if(confirm("Supprimer ?")){await apiDelete(`/students/${id}`);loadStudents()}}studentForm.addEventListener("submit",async e=>{e.preventDefault();await apiPost("/students",{full_name:full_name.value,email:email.value,department:department.value,level:level.value,password_hash:password_hash.value});studentForm.reset();password_hash.value="hashed_default_password";loadStudents()});loadStudents();
+function renderStudents(items) {
+    const c = document.getElementById('studentsContainer');
+
+    if (!items || !items.length) {
+        c.innerHTML = '<p>Aucun étudiant trouvé.</p>';
+        return;
+    }
+
+    c.innerHTML = `
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom complet</th>
+                    <th>Email</th>
+                    <th>Département</th>
+                    <th>Niveau</th>
+                    <th>Nombre d'emprunts</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${items.map(item => `
+                    <tr>
+                        <td>${item.student_id}</td>
+                        <td>${item.full_name}</td>
+                        <td>${item.email}</td>
+                        <td>${item.department || ''}</td>
+                        <td>${item.level || ''}</td>
+                        <td>${item.loans_count}</td>
+                    </tr>
+                `).join('')}
+            </tbody>
+        </table>
+    `;
+}
+
+async function loadStudents() {
+    try {
+        const items = await apiGet('/catalog/students');
+        renderStudents(items || []);
+    } catch (error) {
+        console.error(error);
+        alert('Erreur étudiants : ' + error.message);
+    }
+}
+
+loadStudents();

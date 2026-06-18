@@ -1,0 +1,49 @@
+/* Home page large icons on cards */
+.home-cards-grid .home-feature-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-cards-grid .home-feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.home-feature-card .card-body {
+    min-height: 190px;
+    padding: 22px;
+}
+
+.home-card-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 2.25rem;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.22);
+}
+
+.home-feature-card h5 {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.home-feature-card p {
+    color: #495057;
+    min-height: 44px;
+}
+
+.icon-dashboard { background: linear-gradient(135deg, #0d6efd, #5b9dff); }
+.icon-books { background: linear-gradient(135deg, #198754, #58c98b); }
+.icon-students { background: linear-gradient(135deg, #6f42c1, #a783e8); }
+.icon-loans { background: linear-gradient(135deg, #fd7e14, #ffb36b); }
+.icon-librarian { background: linear-gradient(135deg, #20c997, #72e3c3); }
+.icon-bigdata { background: linear-gradient(135deg, #0dcaf0, #64ddf7); }
+.icon-ai { background: linear-gradient(135deg, #dc3545, #ff7b89); }
+.icon-recommendations { background: linear-gradient(135deg, #ffc107, #ffd969); color: #212529; }
+.icon-visualizations { background: linear-gradient(135deg, #6610f2, #9b6cff); }

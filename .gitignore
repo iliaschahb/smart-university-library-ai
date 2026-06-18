@@ -216,3 +216,16 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Modèles IA entraînés - trop volumineux pour GitHub
+backend/ml/models/*.joblib
+backend/ml/models/*.pkl
+backend/ml/models/*.pickle
+
+# Datasets analytiques générés
+data/analytics/hybrid_ai_dataset.csv
+data/analytics/*.parquet
+
+# Caches Python
+__pycache__/
+*.pyc

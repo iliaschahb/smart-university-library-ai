@@ -9,18 +9,25 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Smart Library AI</a>
-            <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="index.html">Accueil</a>
-                <a class="nav-link" href="dashboard.html">Dashboard</a>
-                <a class="nav-link" href="books.html">Livres</a>
-                <a class="nav-link" href="students.html">Étudiants</a>
-                <a class="nav-link" href="loans.html">Emprunts</a>
-                <a class="nav-link active" href="bigdata.html">Big Data</a>
-            </div>
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Smart Library AI</a>
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="index.html">Accueil</a>
+            <a class="nav-link" href="admin_panel.html">Admin</a>
+            <a class="nav-link" href="librarian_dashboard.html">Bibliothécaire</a>
+            <a class="nav-link" href="dashboard.html">Dashboard</a>
+            <a class="nav-link" href="books.html">Livres</a>
+            <a class="nav-link" href="students.html">Étudiants</a>
+            <a class="nav-link" href="loans.html">Emprunts</a>
+            <a class="nav-link" href="bigdata.html">Big Data</a>
+            <a class="nav-link" href="ml_hybrid.html">IA Hybride</a>
+            <a class="nav-link" href="recommendations.html">Recommandations</a>
+            <a class="nav-link" href="visualizations.html">Visualisations</a>
+            <a class="nav-link" href="catalog_relational.html">Catalogue Kaggle</a>
+            <button class="btn btn-sm btn-outline-light ms-2" onclick="logoutUser()">Déconnexion</button>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <div class="container py-4">
         <div class="page-title">Dashboard Big Data - PySpark</div>
@@ -42,5 +49,7 @@
 
     <script src="js/api.js"></script>
     <script src="js/bigdata.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/protect_admin.js"></script>
 </body>
 </html>

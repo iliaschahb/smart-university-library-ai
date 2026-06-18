@@ -1,1 +1,51 @@
-function getApiBaseUrl(){const u=new URL(window.location.href);if(u.hostname==="localhost"||u.hostname==="127.0.0.1")return"http://localhost:5000";if(u.hostname.endsWith(".app.github.dev")){const h=u.hostname.replace(/-\d+\.app\.github\.dev$/,"-5000.app.github.dev");return`${u.protocol}//${h}`}return"http://localhost:5000"}const API_BASE_URL=getApiBaseUrl();console.log("API_BASE_URL =",API_BASE_URL);async function handleResponse(r,m){const ct=r.headers.get("content-type")||"";const d=ct.includes("application/json")?await r.json():await r.text();if(!r.ok){if(typeof d==="object"&&d!==null&&d.error)throw new Error(d.error);throw new Error(m||`Erreur HTTP ${r.status}`)}return d}async function apiGet(e){return handleResponse(await fetch(`${API_BASE_URL}${e}`),`Erreur GET ${e}`)}async function apiPost(e,d){return handleResponse(await fetch(`${API_BASE_URL}${e}`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(d)}),"Erreur POST")}async function apiPut(e,d){return handleResponse(await fetch(`${API_BASE_URL}${e}`,{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(d)}),"Erreur PUT")}async function apiDelete(e){return handleResponse(await fetch(`${API_BASE_URL}${e}`,{method:"DELETE"}),"Erreur DELETE")}
+function getApiBaseUrl() {
+    const host = window.location.hostname;
+    if (host.includes('.app.github.dev')) {
+        return `${window.location.protocol}//${host.replace('-5500.', '-5000.')}`;
+    }
+    return 'http://localhost:5000';
+}
+
+const API_BASE_URL = getApiBaseUrl();
+
+async function parseJsonResponse(response) {
+    const text = await response.text();
+    try { return text ? JSON.parse(text) : {}; }
+    catch (_) { return { error: text || 'Réponse non JSON du serveur' }; }
+}
+
+async function apiGet(endpoint) {
+    let response;
+    try {
+        response = await fetch(`${API_BASE_URL}${endpoint}`, {
+            method: 'GET',
+            credentials: 'include'
+        });
+    } catch (error) {
+        throw new Error(`Impossible de joindre le backend Flask (${API_BASE_URL}). Vérifie que le port 5000 est lancé et exposé dans Codespaces.`);
+    }
+    const data = await parseJsonResponse(response);
+    if (response.status === 401 && window.location.pathname.split('/').pop() !== 'login.html') {
+        window.location.href = 'login.html';
+        throw new Error('Authentification requise.');
+    }
+    if (!response.ok) throw new Error(data.error || data.message || 'Erreur API');
+    return data;
+}
+
+async function apiPost(endpoint, payload = {}) {
+    let response;
+    try {
+        response = await fetch(`${API_BASE_URL}${endpoint}`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+    } catch (error) {
+        throw new Error(`Impossible de joindre le backend Flask (${API_BASE_URL}). Vérifie que le port 5000 est lancé et exposé dans Codespaces.`);
+    }
+    const data = await parseJsonResponse(response);
+    if (!response.ok) throw new Error(data.error || data.message || 'Erreur API');
+    return data;
+}

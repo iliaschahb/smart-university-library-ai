@@ -1,50 +1,142 @@
+import os
+from datetime import timedelta
+
 from flask import Flask, jsonify
 from flask_cors import CORS
-from routes.bigdata_routes import bigdata_bp
+
 from config import Config
 from database import db
-from routes.books_routes import books_bp
-from routes.students_routes import students_bp
-from routes.loans_routes import loans_bp
-from routes.categories_routes import categories_bp
+
+# ================================
+# Blueprints ACTIFS
+# ================================
+
+from routes.auth_routes import auth_bp
+from routes.admin_routes import admin_bp
 from routes.dashboard_routes import dashboard_bp
 from routes.bigdata_routes import bigdata_bp
-from seed_data import seed_database
 from routes.ml_routes import ml_bp
+from routes.hybrid_ml_routes import hybrid_ml_bp
+from routes.recommendation_routes import recommendation_bp
+from routes.visualization_routes import visualization_bp
+from routes.librarian_dashboard_routes import librarian_dashboard_bp
+from routes.catalog_relational_routes import catalog_relational_bp
+
+# ================================
+# Modèles à charger pour db.create_all()
+# ================================
+
+from models_kaggle_catalog import (
+    BooksCatalog,
+    BookAnalytics,
+    Inventory,
+    StudentLocal,
+    LoanLocal,
+)
+
+from models_auth import LibrarianUser
+
+# ================================
+# Création de l'application Flask
+# ================================
+
 app = Flask(__name__)
 app.config.from_object(Config)
 
-CORS(app)
+# ================================
+# Session / Auth configuration
+# ================================
+
+app.secret_key = os.getenv("SECRET_KEY", "change-this-secret-key")
+app.config["SESSION_COOKIE_SAMESITE"] = "None"
+app.config["SESSION_COOKIE_SECURE"] = True
+app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(hours=8)
+app.config["SESSION_COOKIE_HTTPONLY"] = True
+
+# ---- Option Codespaces / HTTPS ----
+# Si tu as des problèmes de session en Codespaces,
+# remplace Lax/False par None/True :
+#
+# app.config["SESSION_COOKIE_SAMESITE"] = "None"
+# app.config["SESSION_COOKIE_SECURE"] = True
+#
+app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
+app.config["SESSION_COOKIE_SECURE"] = False
+
+# ================================
+# CORS
+# ================================
+
+CORS(app, supports_credentials=True)
+
+# ================================
+# Initialisation DB
+# ================================
+
 db.init_app(app)
 
 with app.app_context():
-    from models import User, Student, Category, Book, Loan, Rating, Recommendation
     db.create_all()
-    seed_database()
 
-app.register_blueprint(books_bp)
-app.register_blueprint(students_bp)
-app.register_blueprint(loans_bp)
-app.register_blueprint(categories_bp)
+# ================================
+# Enregistrement UNIQUE des blueprints
+# ================================
+
+app.register_blueprint(auth_bp)
+app.register_blueprint(admin_bp)
 app.register_blueprint(dashboard_bp)
 app.register_blueprint(bigdata_bp)
 app.register_blueprint(ml_bp)
-@app.route("/")
+app.register_blueprint(hybrid_ml_bp)
+app.register_blueprint(recommendation_bp)
+app.register_blueprint(visualization_bp)
+app.register_blueprint(librarian_dashboard_bp)
+app.register_blueprint(catalog_relational_bp)
+
+# ================================
+# Routes système
+# ================================
+
+@app.route("/", methods=["GET"])
 def home():
     return jsonify({
-        "message": "Bienvenue dans Smart University Library AI",
-        "status": "API Flask opérationnelle",
-        "version": "1.0.0"
-    })
+        "message": "Smart University Library AI API",
+        "architecture": "Catalogue relationnel Kaggle + opérations locales + Big Data + IA hybride + authentification",
+        "main_routes": {
+            "health": "/health",
+            "auth_me": "/auth/me",
+            "auth_login": "/auth/login",
+            "auth_logout": "/auth/logout",
+            "admin_health": "/admin/health",
+            "admin_users": "/admin/users",
+            "dashboard_summary": "/dashboard/summary",
+            "bigdata_summary": "/bigdata/summary",
+            "catalog_health": "/catalog/health",
+            "catalog_books": "/catalog/books",
+            "catalog_students": "/catalog/students",
+            "catalog_loans": "/catalog/loans",
+            "librarian_dashboard": "/librarian/dashboard",
+            "ml_popularity_health": "/ml/popularity/health",
+            "ml_hybrid_health": "/ml/hybrid/health",
+            "recommendations_health": "/recommendations/health",
+            "visualizations_list": "/visualizations/list",
+        }
+    }), 200
 
 
-@app.route("/health")
+@app.route("/health", methods=["GET"])
 def health_check():
     return jsonify({
-        "status": "OK",
-        "service": "backend-flask"
-    })
+        "status": "ok",
+        "message": "Backend Flask opérationnel",
+        "database": "connected",
+        "mode": "kaggle_relational_auth_admin"
+    }), 200
 
+
+# ================================
+# Lancement local
+# ================================
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

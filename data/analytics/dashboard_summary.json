@@ -6,84 +6,84 @@
   "total_tags_used": 34244,
   "top_books": [
     {
-      "book_id": 27,
-      "title": "Harry Potter and the Half-Blood Prince (Harry Potter, #6)",
-      "authors": "J.K. Rowling, Mary GrandPré",
+      "book_id": 28.0,
+      "title": "Lord of the Flies",
+      "authors": "William Golding",
       "rating_count": 100,
-      "avg_user_rating": 4.16,
-      "to_read_count": 438
+      "avg_user_rating": 3.91,
+      "to_read_count": 1148
     },
     {
-      "book_id": 1105,
-      "title": "Dune Messiah (Dune Chronicles #2)",
-      "authors": "Frank Herbert",
+      "book_id": 14.0,
+      "title": "Animal Farm",
+      "authors": "George Orwell",
       "rating_count": 100,
-      "avg_user_rating": 3.7,
-      "to_read_count": 62
+      "avg_user_rating": 3.86,
+      "to_read_count": 1127
     },
     {
-      "book_id": 2,
-      "title": "Harry Potter and the Sorcerer's Stone (Harry Potter, #1)",
-      "authors": "J.K. Rowling, Mary GrandPré",
+      "book_id": 44.0,
+      "title": "The Notebook (The Notebook, #1)",
+      "authors": "Nicholas Sparks",
       "rating_count": 100,
-      "avg_user_rating": 4.21,
-      "to_read_count": 400
+      "avg_user_rating": 3.21,
+      "to_read_count": 445
     },
     {
-      "book_id": 1224,
-      "title": "The Elegant Universe: Superstrings, Hidden Dimensions, and the Quest for the Ultimate Theory",
-      "authors": "Brian Greene",
-      "rating_count": 100,
-      "avg_user_rating": 4.0,
-      "to_read_count": 151
-    },
-    {
-      "book_id": 18,
-      "title": "Harry Potter and the Prisoner of Azkaban (Harry Potter, #3)",
-      "authors": "J.K. Rowling, Mary GrandPré, Rufus Beck",
-      "rating_count": 100,
-      "avg_user_rating": 4.16,
-      "to_read_count": 428
-    },
-    {
-      "book_id": 1262,
-      "title": "Children of Dune (Dune Chronicles #3)",
-      "authors": "Frank Herbert",
-      "rating_count": 100,
-      "avg_user_rating": 3.82,
-      "to_read_count": 55
-    },
-    {
-      "book_id": 24,
-      "title": "Harry Potter and the Goblet of Fire (Harry Potter, #4)",
-      "authors": "J.K. Rowling, Mary GrandPré",
-      "rating_count": 100,
-      "avg_user_rating": 4.21,
-      "to_read_count": 431
-    },
-    {
-      "book_id": 3275,
-      "title": "Harry Potter Boxed Set, Books 1-5 (Harry Potter, #1-5)",
-      "authors": "J.K. Rowling, Mary GrandPré",
-      "rating_count": 100,
-      "avg_user_rating": 4.77,
-      "to_read_count": 5
-    },
-    {
-      "book_id": 3753,
-      "title": "Harry Potter Collection (Harry Potter, #1-6)",
-      "authors": "J.K. Rowling",
-      "rating_count": 100,
-      "avg_user_rating": 4.72,
-      "to_read_count": 7
-    },
-    {
-      "book_id": 1597,
-      "title": "The Power of One (The Power of One, #1)",
-      "authors": "Bryce Courtenay",
+      "book_id": 39.0,
+      "title": "A Game of Thrones (A Song of Ice and Fire, #1)",
+      "authors": "George R.R. Martin",
       "rating_count": 100,
       "avg_user_rating": 4.42,
-      "to_read_count": 147
+      "to_read_count": 1619
+    },
+    {
+      "book_id": 29.0,
+      "title": "Romeo and Juliet",
+      "authors": "William Shakespeare, Robert           Jackson",
+      "rating_count": 100,
+      "avg_user_rating": 4.0,
+      "to_read_count": 348
+    },
+    {
+      "book_id": 16.0,
+      "title": "The Girl with the Dragon Tattoo (Millennium, #1)",
+      "authors": "Stieg Larsson, Reg Keeland",
+      "rating_count": 100,
+      "avg_user_rating": 3.98,
+      "to_read_count": 1425
+    },
+    {
+      "book_id": 4.0,
+      "title": "To Kill a Mockingbird",
+      "authors": "Harper Lee",
+      "rating_count": 100,
+      "avg_user_rating": 4.46,
+      "to_read_count": 1478
+    },
+    {
+      "book_id": 3.0,
+      "title": "Twilight (Twilight, #1)",
+      "authors": "Stephenie Meyer",
+      "rating_count": 100,
+      "avg_user_rating": 3.09,
+      "to_read_count": 287
+    },
+    {
+      "book_id": 32.0,
+      "title": "Of Mice and Men",
+      "authors": "John Steinbeck",
+      "rating_count": 100,
+      "avg_user_rating": 3.95,
+      "to_read_count": 886
+    },
+    {
+      "book_id": 17.0,
+      "title": "Catching Fire (The Hunger Games, #2)",
+      "authors": "Suzanne Collins",
+      "rating_count": 100,
+      "avg_user_rating": 3.97,
+      "to_read_count": 591
     }
   ],
   "top_tags": [
@@ -167,19 +167,14 @@
       "avg_rating_given": 3.9396984924623117
     },
     {
-      "user_id": 12381,
-      "ratings_given": 199,
-      "avg_rating_given": 3.4271356783919598
-    },
-    {
       "user_id": 52036,
       "ratings_given": 199,
       "avg_rating_given": 3.442211055276382
     },
     {
-      "user_id": 45554,
-      "ratings_given": 197,
-      "avg_rating_given": 4.030456852791878
+      "user_id": 12381,
+      "ratings_given": 199,
+      "avg_rating_given": 3.4271356783919598
     },
     {
       "user_id": 6630,
@@ -187,29 +182,34 @@
       "avg_rating_given": 3.5736040609137056
     },
     {
+      "user_id": 45554,
+      "ratings_given": 197,
+      "avg_rating_given": 4.030456852791878
+    },
+    {
       "user_id": 37834,
       "ratings_given": 196,
       "avg_rating_given": 4.13265306122449
     },
     {
-      "user_id": 7563,
+      "user_id": 19729,
       "ratings_given": 196,
-      "avg_rating_given": 3.5
+      "avg_rating_given": 3.663265306122449
     },
     {
-      "user_id": 9668,
+      "user_id": 24143,
       "ratings_given": 196,
-      "avg_rating_given": 3.8418367346938775
+      "avg_rating_given": 3.9489795918367347
     }
   ],
   "popularity_levels": [
     {
-      "popularity_level": "moyenne",
-      "count": 126
-    },
-    {
       "popularity_level": "élevée",
       "count": 4
+    },
+    {
+      "popularity_level": "moyenne",
+      "count": 126
     },
     {
       "popularity_level": "faible",
