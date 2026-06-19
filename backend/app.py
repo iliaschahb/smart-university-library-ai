@@ -12,6 +12,7 @@ from database import db
 # ================================
 
 from routes.auth_routes import auth_bp
+from routes.loan_actions_routes import loan_actions_bp
 from routes.admin_routes import admin_bp
 from routes.dashboard_routes import dashboard_bp
 from routes.bigdata_routes import bigdata_bp
@@ -92,6 +93,7 @@ app.register_blueprint(recommendation_bp)
 app.register_blueprint(visualization_bp)
 app.register_blueprint(librarian_dashboard_bp)
 app.register_blueprint(catalog_relational_bp)
+app.register_blueprint(loan_actions_bp)
 
 # ================================
 # Routes système
