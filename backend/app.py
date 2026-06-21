@@ -92,6 +92,7 @@ with app.app_context():
 
 app.register_blueprint(auth_bp)
 app.register_blueprint(admin_bp)
+
 app.register_blueprint(loan_actions_bp)
 app.register_blueprint(dashboard_bp)
 app.register_blueprint(bigdata_bp)
