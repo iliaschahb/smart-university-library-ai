@@ -5,7 +5,8 @@ body {
 }
 
 body.sidebar-open {
-    padding-left: 236px;
+
+    padding-left: 210px;
 }
 
 .side-shell {
