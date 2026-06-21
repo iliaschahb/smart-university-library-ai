@@ -1,0 +1,7 @@
+#dynamicNavbarHost .navbar-brand {
+    font-weight: 700;
+}
+
+#dynamicNavbarHost .nav-link.active {
+    font-weight: 600;
+}

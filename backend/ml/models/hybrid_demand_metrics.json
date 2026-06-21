@@ -16,57 +16,57 @@
     "available_quantity"
   ],
   "target": "demand_score",
-  "mae": 7.405397431442898,
-  "rmse": 40.48567487492785,
-  "r2": 0.999716387685548,
+  "mae": 6.912921842824169,
+  "rmse": 38.25551894812087,
+  "r2": 0.999746775704316,
   "feature_importance": [
     {
       "feature": "global_popularity_score",
-      "importance": 0.9991247537378218
+      "importance": 0.9991142302730249
     },
     {
       "feature": "ratings_count",
-      "importance": 0.00033111809227350214
+      "importance": 0.0003920496190015957
     },
     {
       "feature": "local_loan_count",
-      "importance": 0.0002474633819250222
+      "importance": 0.00024323138143713448
     },
     {
       "feature": "work_ratings_count",
-      "importance": 0.00021509764327962895
+      "importance": 0.00016842552646523476
     },
     {
       "feature": "average_rating",
-      "importance": 1.516952786557501e-05
+      "importance": 1.5839324658777888e-05
     },
     {
       "feature": "to_read_count",
-      "importance": 1.4764546030142872e-05
+      "importance": 1.437911514479733e-05
     },
     {
       "feature": "publication_year",
-      "importance": 1.3429555621423705e-05
+      "importance": 1.3330168403641282e-05
     },
     {
       "feature": "available_quantity",
-      "importance": 1.3252763657194126e-05
+      "importance": 1.2230177622621401e-05
     },
     {
       "feature": "local_active_loan_count",
-      "importance": 8.949607915774617e-06
+      "importance": 1.1033138064577031e-05
     },
     {
       "feature": "quantity",
-      "importance": 8.010884669466372e-06
+      "importance": 9.629090882451716e-06
     },
     {
       "feature": "local_late_count",
-      "importance": 5.657465502150892e-06
+      "importance": 3.2882510524240194e-06
     },
     {
       "feature": "tag_count",
-      "importance": 2.3327934382839018e-06
+      "importance": 2.33393424181031e-06
     }
   ],
   "model_file": "/workspaces/smart-university-library-ai/backend/ml/models/hybrid_demand_model.joblib"

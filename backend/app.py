@@ -1,7 +1,7 @@
 import os
 from datetime import timedelta
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 
 from config import Config
@@ -12,8 +12,8 @@ from database import db
 # ================================
 
 from routes.auth_routes import auth_bp
-from routes.loan_actions_routes import loan_actions_bp
 from routes.admin_routes import admin_bp
+from routes.loan_actions_routes import loan_actions_bp
 from routes.dashboard_routes import dashboard_bp
 from routes.bigdata_routes import bigdata_bp
 from routes.ml_routes import ml_bp
@@ -49,26 +49,33 @@ app.config.from_object(Config)
 # ================================
 
 app.secret_key = os.getenv("SECRET_KEY", "change-this-secret-key")
-app.config["SESSION_COOKIE_SAMESITE"] = "None"
-app.config["SESSION_COOKIE_SECURE"] = True
+
 app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(hours=8)
 app.config["SESSION_COOKIE_HTTPONLY"] = True
 
-# ---- Option Codespaces / HTTPS ----
-# Si tu as des problèmes de session en Codespaces,
-# remplace Lax/False par None/True :
-#
-# app.config["SESSION_COOKIE_SAMESITE"] = "None"
-# app.config["SESSION_COOKIE_SECURE"] = True
-#
-app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
-app.config["SESSION_COOKIE_SECURE"] = False
+# IMPORTANT POUR CODESPACES HTTPS
+app.config["SESSION_COOKIE_SAMESITE"] = "None"
+app.config["SESSION_COOKIE_SECURE"] = True
 
 # ================================
 # CORS
 # ================================
 
 CORS(app, supports_credentials=True)
+
+
+@app.after_request
+def add_cors_headers(response):
+    origin = request.headers.get("Origin")
+
+    if origin:
+        response.headers["Access-Control-Allow-Origin"] = origin
+        response.headers["Access-Control-Allow-Credentials"] = "true"
+        response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+        response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
+
+    return response
+
 
 # ================================
 # Initialisation DB
@@ -85,6 +92,7 @@ with app.app_context():
 
 app.register_blueprint(auth_bp)
 app.register_blueprint(admin_bp)
+app.register_blueprint(loan_actions_bp)
 app.register_blueprint(dashboard_bp)
 app.register_blueprint(bigdata_bp)
 app.register_blueprint(ml_bp)
@@ -93,7 +101,6 @@ app.register_blueprint(recommendation_bp)
 app.register_blueprint(visualization_bp)
 app.register_blueprint(librarian_dashboard_bp)
 app.register_blueprint(catalog_relational_bp)
-app.register_blueprint(loan_actions_bp)
 
 # ================================
 # Routes système
@@ -117,6 +124,9 @@ def home():
             "catalog_books": "/catalog/books",
             "catalog_students": "/catalog/students",
             "catalog_loans": "/catalog/loans",
+            "create_loan": "/loans/create",
+            "return_loan": "/loans/<loan_id>/return",
+            "update_inventory": "/inventory/<book_id>/update",
             "librarian_dashboard": "/librarian/dashboard",
             "ml_popularity_health": "/ml/popularity/health",
             "ml_hybrid_health": "/ml/hybrid/health",
@@ -137,8 +147,9 @@ def health_check():
 
 
 # ================================
-# Lancement local
+# Lancement local / Codespaces
 # ================================
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)

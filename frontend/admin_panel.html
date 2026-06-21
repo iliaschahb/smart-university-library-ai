@@ -5,53 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panneau Admin - Smart Library AI</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home_icons.css">
+    <link rel="stylesheet" href="css/navbar_dynamic.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">Smart Library AI</a>
-        <div class="navbar-nav ms-auto">
-            <a class="nav-link" href="index.html">Accueil</a>
-            <a class="nav-link" href="admin_panel.html">Admin</a>
-            <a class="nav-link" href="librarian_dashboard.html">Bibliothécaire</a>
-            <a class="nav-link" href="dashboard.html">Dashboard</a>
-            <a class="nav-link" href="books.html">Livres</a>
-            <a class="nav-link" href="students.html">Étudiants</a>
-            <a class="nav-link" href="loans.html">Emprunts</a>
-            <a class="nav-link" href="bigdata.html">Big Data</a>
-            <a class="nav-link" href="ml_hybrid.html">IA Hybride</a>
-            <a class="nav-link" href="recommendations.html">Recommandations</a>
-            <a class="nav-link" href="visualizations.html">Visualisations</a>
-            <a class="nav-link" href="catalog_relational.html">Catalogue Kaggle</a>
-            <button class="btn btn-sm btn-outline-light ms-2" onclick="logoutUser()">Déconnexion</button>
-        </div>
-    </div>
-</nav>
+<div id="dynamicNavbarHost"></div>
 
-    <div class="container py-4">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <div>
-                <div class="page-title">Panneau administrateur</div>
-                <div class="small-muted">Zone réservée aux comptes ayant le rôle <strong>admin</strong>.</div>
+<div class="container py-4">
+    <div class="page-title">Panneau administrateur</div>
+    <p class="small-muted">Créer, afficher, désactiver ou supprimer des comptes.</p>
+
+    <div class="row g-4">
+        <div class="col-lg-4">
+            <div class="table-container">
+                <h4>Créer un utilisateur</h4>
+
+                <div class="mb-3">
+                    <label class="form-label">Nom d'utilisateur</label>
+                    <input id="newUsername" class="form-control" placeholder="ex: biblio2">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Nom complet</label>
+                    <input id="newFullName" class="form-control" placeholder="ex: Bibliothécaire 2">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Mot de passe</label>
+                    <input id="newPassword" type="password" class="form-control" placeholder="ex: Biblio@123">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Rôle</label>
+                    <select id="newRole" class="form-select">
+                        <option value="librarian">Bibliothécaire</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary w-100" onclick="createUser()">
+                    <i class="bi bi-person-plus"></i> Créer
+                </button>
+
+                <div id="createUserMessage" class="mt-3 small-muted"></div>
             </div>
-            <button class="btn btn-outline-danger" onclick="logoutLibrarian()">Déconnexion</button>
         </div>
 
-        <div class="table-container mb-4">
-            <h4>État du service admin</h4>
-            <div id="adminHealthContainer" class="loading-text">Chargement...</div>
-        </div>
+        <div class="col-lg-8">
+            <div class="table-container mb-4">
+                <h4>État admin</h4>
+                <div id="adminHealthContainer" class="loading-text">Chargement...</div>
+            </div>
 
-        <div class="table-container">
-            <h4>Utilisateurs du système</h4>
-            <div id="adminUsersContainer" class="loading-text">Chargement...</div>
+            <div class="table-container">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="mb-0">Utilisateurs</h4>
+                    <button class="btn btn-outline-primary btn-sm" onclick="loadAdminUsers()">Actualiser</button>
+                </div>
+
+                <div id="adminUsersContainer" class="loading-text">Chargement...</div>
+            </div>
         </div>
     </div>
+</div>
 
-    <script src="js/api.js"></script>
-    <script src="js/auth.js"></script>
-    <script src="js/admin_panel.js"></script>
-    <script src="js/protect_admin.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/protect_admin.js"></script>
+<script src="js/admin_panel.js"></script>
+    <script src="js/nav_role.js"></script>
 </body>
 </html>

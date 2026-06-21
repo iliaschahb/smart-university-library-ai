@@ -6,28 +6,11 @@
         <title>Dashboard relationnel - Smart Library AI</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
-    </head>
+        <link rel="stylesheet" href="css/home_icons.css">
+    <link rel="stylesheet" href="css/navbar_dynamic.css">
+</head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">Smart Library AI</a>
-        <div class="navbar-nav ms-auto">
-            <a class="nav-link" href="index.html">Accueil</a>
-            <a class="nav-link" href="admin_panel.html">Admin</a>
-            <a class="nav-link" href="librarian_dashboard.html">Bibliothécaire</a>
-            <a class="nav-link" href="dashboard.html">Dashboard</a>
-            <a class="nav-link" href="books.html">Livres</a>
-            <a class="nav-link" href="students.html">Étudiants</a>
-            <a class="nav-link" href="loans.html">Emprunts</a>
-            <a class="nav-link" href="bigdata.html">Big Data</a>
-            <a class="nav-link" href="ml_hybrid.html">IA Hybride</a>
-            <a class="nav-link" href="recommendations.html">Recommandations</a>
-            <a class="nav-link" href="visualizations.html">Visualisations</a>
-            <a class="nav-link" href="catalog_relational.html">Catalogue Kaggle</a>
-            <button class="btn btn-sm btn-outline-light ms-2" onclick="logoutUser()">Déconnexion</button>
-        </div>
-    </div>
-</nav>
+        <div id="dynamicNavbarHost"></div>
 
         <div class="container py-4">
             <div class="page-title">Dashboard relationnel Kaggle</div>
@@ -56,6 +39,6 @@
         <script src="js/api.js"></script>
         <script src="js/dashboard.js"></script>
         <script src="js/auth.js"></script>
-    <script src="js/protect_admin.js"></script>
+<script src="js/protect_app_user.js"></script>    <script src="js/nav_role.js"></script>
 </body>
     </html>
