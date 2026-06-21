@@ -1,12 +1,3 @@
-function escapeHtml(text) {
-    return String(text ?? '')
-        .replaceAll('&', '&amp;')
-        .replaceAll('<', '&lt;')
-        .replaceAll('>', '&gt;')
-        .replaceAll('"', '&quot;')
-        .replaceAll("'", '&#39;');
-}
-
 async function createLoanFromForm() {
     const message = document.getElementById('createLoanMessage');
     const payload = {
@@ -64,18 +55,18 @@ async function loadLoansActions() {
                     ${items.map(item => {
                         const loanId = item.loan_id || item.id;
                         const returned = item.return_date;
+                        const studentLabel = item.student_name || item.student || item.student_id || '-';
+                        const bookLabel = item.book_title || item.title || item.book || item.book_id || '-';
                         return `
                             <tr>
                                 <td>${loanId}</td>
-                                <td>${escapeHtml(item.student_id || item.studentId || item.student_name || item.student || "-")}</td>
-<td>${escapeHtml(item.book_id || item.bookId || item.book_title || item.title || item.book || "-")}</td>
-                                <td>${escapeHtml(item.borrow_date || '')}</td>
-                                <td>${escapeHtml(item.due_date || '')}</td>
-                                <td>${escapeHtml(item.return_date || '')}</td>
-                                <td>${escapeHtml(item.status || '')}</td>
-                                <td>
-                                    ${returned ? '<span class="text-success">Retourné</span>' : `<button class="btn btn-sm btn-outline-success" onclick="returnLoan(${loanId})">Retourner</button>`}
-                                </td>
+                                <td>${escapeHtmlSafe(studentLabel)}</td>
+                                <td>${escapeHtmlSafe(bookLabel)}</td>
+                                <td>${escapeHtmlSafe(item.borrow_date || '')}</td>
+                                <td>${escapeHtmlSafe(item.due_date || '')}</td>
+                                <td>${escapeHtmlSafe(item.return_date || '')}</td>
+                                <td>${statusBadge(item.status)}</td>
+                                <td>${returned ? '<span class="text-success">Retourné</span>' : `<button class="btn btn-sm btn-outline-success" onclick="returnLoan(${loanId})">Retourner</button>`}</td>
                             </tr>
                         `;
                     }).join('')}

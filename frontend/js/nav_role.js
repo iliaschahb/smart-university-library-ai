@@ -35,31 +35,25 @@ async function buildDynamicNavbar() {
         { href: 'catalog_relational.html', label: 'Catalogue avancé' },
     ];
 
-    const publicLinks = [
-        { href: 'login.html', label: 'Connexion' },
-    ];
-
     let links = [];
     if (isAdmin) {
-        links = [...sharedLinks.slice(0, 1), adminLinks[0], ...sharedLinks.slice(1), adminLinks[1], adminLinks[2]];
+        links = [sharedLinks[0], adminLinks[0], ...sharedLinks.slice(1), adminLinks[1], adminLinks[2]];
     } else if (isAppUser) {
         links = sharedLinks;
     } else {
-        links = publicLinks;
+        links = [{ href: 'login.html', label: 'Connexion' }];
     }
 
     navHost.innerHTML = `
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
+            <div class="container-fluid px-4">
                 <a class="navbar-brand" href="${authenticated ? 'index.html' : 'login.html'}">Smart Library AI</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dynamicNavbar" aria-controls="dynamicNavbar" aria-expanded="false" aria-label="Navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="dynamicNavbar">
                     <div class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-                        ${links.map(link => `
-                            <a class="nav-link ${currentPage === link.href ? 'active' : ''}" href="${link.href}">${link.label}</a>
-                        `).join('')}
+                        ${links.map(link => `<a class="nav-link ${currentPage === link.href ? 'active' : ''}" href="${link.href}">${link.label}</a>`).join('')}
                         ${authenticated ? `<button class="btn btn-sm btn-outline-light ms-lg-2 mt-2 mt-lg-0" onclick="logoutUser()">Déconnexion</button>` : ''}
                     </div>
                 </div>
