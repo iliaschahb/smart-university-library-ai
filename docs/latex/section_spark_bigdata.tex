@@ -1,0 +1,45 @@
+\section{Traitement Big Data avec Apache Spark}
+
+Afin d'intégrer une dimension Big Data plus explicite dans le projet, une étape de traitement avec \textbf{Apache Spark} a été ajoutée. Spark est un moteur de traitement distribué permettant de manipuler des volumes importants de données. Dans cette version académique, Spark est exécuté en mode local avec l'option \texttt{local[*]}, mais le code reste compatible avec une exécution sur un cluster Spark.
+
+Le script Spark se trouve dans :
+
+\begin{lstlisting}[language=bash]
+backend/bigdata/spark_goodbooks_processing.py
+\end{lstlisting}
+
+Ce script lit les fichiers du dataset Goodbooks-10k :
+
+\begin{itemize}
+    \item \texttt{books.csv} ;
+    \item \texttt{ratings.csv} ;
+    \item \texttt{to\_read.csv}.
+\end{itemize}
+
+Spark réalise ensuite plusieurs agrégations :
+
+\begin{itemize}
+    \item nombre total de notes par livre ;
+    \item nombre distinct d'utilisateurs ayant noté un livre ;
+    \item moyenne des notes ;
+    \item nombre d'utilisateurs ayant ajouté le livre à leur liste de lecture ;
+    \item calcul d'un score de popularité avec Spark.
+\end{itemize}
+
+Le résultat est exporté dans :
+
+\begin{lstlisting}[language=bash]
+data/processed/spark_books_features.csv
+\end{lstlisting}
+
+Un résumé du traitement est également généré dans :
+
+\begin{lstlisting}[language=bash]
+data/processed/spark_processing_summary.json
+\end{lstlisting}
+
+Cette étape permet de montrer l'utilisation d'un outil Big Data réel dans le pipeline du projet. Les données traitées par Spark peuvent ensuite être intégrées au dataset analytique utilisé pour le modèle de machine learning.
+
+\subsection{Mode local et évolution vers un cluster}
+
+Dans le cadre du stage, Spark est utilisé en mode local afin de simplifier l'exécution dans GitHub Codespaces. Cependant, l'utilisation de l'API DataFrame de PySpark permet une évolution vers une architecture distribuée. En production, le même traitement pourrait être exécuté sur un cluster Spark avec HDFS, un stockage cloud ou une plateforme Big Data dédiée.

@@ -1,0 +1,122 @@
+{
+  "tool": "Apache Spark / PySpark",
+  "execution_mode": "local[*]",
+  "input_files": {
+    "books": "data/raw/goodbooks-10k/books.csv",
+    "ratings": "data/raw/goodbooks-10k/ratings.csv",
+    "to_read": "data/raw/goodbooks-10k/to_read.csv"
+  },
+  "output_csv": "data/processed/spark_books_features.csv",
+  "spark_output_dir": "data/processed/spark_books_features",
+  "total_books": 10000,
+  "total_ratings": 981756,
+  "total_to_read": 912705,
+  "features_count": 10000,
+  "available_book_columns": [
+    "id",
+    "book_id",
+    "best_book_id",
+    "work_id",
+    "books_count",
+    "isbn",
+    "isbn13",
+    "authors",
+    "original_publication_year",
+    "original_title",
+    "title",
+    "language_code",
+    "average_rating",
+    "ratings_count",
+    "work_ratings_count",
+    "work_text_reviews_count",
+    "ratings_1",
+    "ratings_2",
+    "ratings_3",
+    "ratings_4",
+    "ratings_5",
+    "image_url",
+    "small_image_url"
+  ],
+  "top_10_books_by_spark_popularity": [
+    {
+      "book_id": 11,
+      "title": "The Hitchhiker's Guide to the Galaxy (Hitchhiker's Guide to the Galaxy, #1)",
+      "authors": "Douglas Adams",
+      "spark_popularity_score": 5.542,
+      "spark_ratings_count": 100,
+      "spark_to_read_count": 1767
+    },
+    {
+      "book_id": 13,
+      "title": "The Ultimate Hitchhiker's Guide to the Galaxy",
+      "authors": "Douglas Adams",
+      "spark_popularity_score": 5.5328,
+      "spark_ratings_count": 100,
+      "spark_to_read_count": 1812
+    },
+    {
+      "book_id": 6,
+      "title": "Harry Potter and the Goblet of Fire (Harry Potter, #4)",
+      "authors": "J.K. Rowling, Mary GrandPré",
+      "spark_popularity_score": 5.4509,
+      "spark_ratings_count": 100,
+      "spark_to_read_count": 1484
+    },
+    {
+      "book_id": 36,
+      "title": "The Lord of the Rings: Weapons and Warfare",
+      "authors": "Chris   Smith, Christopher Lee, Richard Taylor",
+      "spark_popularity_score": 5.4158,
+      "spark_ratings_count": 100,
+      "spark_to_read_count": 1211
+    },
+    {
+      "book_id": 119,
+      "title": "The Lord of the Rings: The Art of The Fellowship of the Ring",
+      "authors": "Gary Russell",
+      "spark_popularity_score": 5.4104,
+      "spark_ratings_count": 100,
+      "spark_to_read_count": 1499
+    },
+    {
+      "book_id": 8,
+      "title": "Harry Potter Boxed Set, Books 1-5 (Harry Potter, #1-5)",
+      "authors": "J.K. Rowling, Mary GrandPré",
+      "spark_popularity_score": 5.4022,
+      "spark_ratings_count": 100,
+      "spark_to_read_count": 1498
+    },
+    {
+      "book_id": 67,
+      "title": "The Known World",
+      "authors": "Edward P. Jones",
+      "spark_popularity_score": 5.3923,
+      "spark_ratings_count": 100,
+      "spark_to_read_count": 1352
+    },
+    {
+      "book_id": 10,
+      "title": "Harry Potter Collection (Harry Potter, #1-6)",
+      "authors": "J.K. Rowling",
+      "spark_popularity_score": 5.3674,
+      "spark_ratings_count": 100,
+      "spark_to_read_count": 1110
+    },
+    {
+      "book_id": 5,
+      "title": "Harry Potter and the Prisoner of Azkaban (Harry Potter, #3)",
+      "authors": "J.K. Rowling, Mary GrandPré, Rufus Beck",
+      "spark_popularity_score": 5.3627,
+      "spark_ratings_count": 100,
+      "spark_to_read_count": 1293
+    },
+    {
+      "book_id": 295,
+      "title": "Treasure Island",
+      "authors": "Robert Louis Stevenson",
+      "spark_popularity_score": 5.3486,
+      "spark_ratings_count": 100,
+      "spark_to_read_count": 1040
+    }
+  ]
+}

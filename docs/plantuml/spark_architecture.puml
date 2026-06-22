@@ -1,0 +1,22 @@
+@startuml
+title Architecture avec composant Apache Spark
+
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+component "Frontend\nHTML/CSS/JS" as Frontend
+component "Backend Flask\nAPI REST" as Backend
+database "SQLite\nDonnées métier" as SQLite
+component "Apache Spark\nTraitement batch" as Spark
+folder "Goodbooks-10k\nCSV bruts" as Raw
+folder "data/processed\nFeatures Spark" as Processed
+component "Modèle ML\nscikit-learn + joblib" as Model
+
+Raw --> Spark : Lecture CSV
+Spark --> Processed : Agrégations / features
+Processed --> Model : Dataset enrichi
+Backend --> SQLite : SQLAlchemy
+Backend --> Model : Inférence
+Frontend --> Backend : API REST / JSON
+
+@enduml

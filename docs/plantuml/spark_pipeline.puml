@@ -1,0 +1,28 @@
+@startuml
+title Pipeline Big Data avec Apache Spark
+
+skinparam shadowing false
+skinparam activity {
+  BackgroundColor #ECFDF5
+  BorderColor #047857
+}
+
+start
+
+:Dataset Goodbooks-10k;
+:Lecture Spark des fichiers CSV;
+:books.csv;
+:ratings.csv;
+:to_read.csv;
+:Nettoyage et typage automatique;
+:Agrégation des ratings par livre;
+:Agrégation des listes de lecture;
+:Calcul du score de popularité Spark;
+:Export spark_books_features.csv;
+:Intégration au dataset analytique;
+:Entraînement du modèle IA;
+:Prédiction via API Flask;
+
+stop
+
+@enduml
