@@ -4,7 +4,7 @@
 
 **Smart University Library AI** est une application web de gestion intelligente d’une bibliothèque universitaire. Le projet permet de gérer les livres, les étudiants, les emprunts, le stock, les utilisateurs et les prévisions de demande des livres.
 
-L’objectif principal est de fournir une plateforme simple pour le bibliothécaire et un espace complet pour l’administrateur.
+L’objectif principal est de fournir une plateforme simple pour le bibliothécaire et un espace complet pour l’administrateur, tout en intégrant une partie Big Data avec Apache Spark et une partie Intelligence Artificielle pour la prévision de la demande.
 
 ---
 
@@ -12,11 +12,10 @@ L’objectif principal est de fournir une plateforme simple pour le bibliothéca
 
 ### Authentification
 
-- Connexion sécurisée pour l’administrateur et le bibliothécaire.
-- Redirection selon le rôle :
-  - administrateur vers l’accueil complet ;
-  - bibliothécaire vers le tableau de bord bibliothèque.
+- Connexion pour l’administrateur et le bibliothécaire.
+- Redirection selon le rôle connecté.
 - Déconnexion depuis toutes les pages.
+- Navigation dynamique selon le profil utilisateur.
 
 ### Gestion des utilisateurs
 
@@ -57,11 +56,18 @@ Disponible pour l’administrateur :
 - visualiser les alertes de stock ;
 - afficher les livres les plus empruntés.
 
-### Prévisions
+### Prévisions IA
 
 - calculer un score de demande pour un livre ;
 - utiliser les informations globales et locales ;
 - aider à prendre des décisions de stock.
+
+### Big Data avec Apache Spark
+
+- lecture des fichiers Goodbooks-10k ;
+- agrégation des ratings et des listes de lecture ;
+- génération de features Spark ;
+- export de fichiers analytiques dans `data/processed/`.
 
 ---
 
@@ -119,12 +125,20 @@ Les pages d’administration, graphiques avancés et catalogue avancé sont rés
 - SQLAlchemy
 - SQLite
 
-### Analyse et prévision
+### Big Data et Intelligence Artificielle
 
+- Apache Spark / PySpark
 - Pandas
 - NumPy
 - scikit-learn
 - Joblib
+
+### DevOps et environnement
+
+- Git
+- GitHub
+- GitHub Codespaces
+- Docker, comme piste d’évolution pour un déploiement reproductible
 
 ---
 
@@ -134,6 +148,7 @@ Les pages d’administration, graphiques avancés et catalogue avancé sont rés
 smart-university-library-ai/
 ├── backend/
 │   ├── app.py
+│   ├── config.py
 │   ├── database.py
 │   ├── models_auth.py
 │   ├── models_kaggle_catalog.py
@@ -160,13 +175,63 @@ smart-university-library-ai/
 │
 ├── data/
 ├── scripts/
+├── tests/
+├── .env.example
+├── .gitignore
 ├── README.md
 └── requirements.txt
 ```
 
 ---
 
-## 6. Lancement du projet dans Codespaces
+## 6. Configuration locale
+
+Pour des raisons de sécurité, les identifiants de démonstration et les clés secrètes ne sont pas publiés directement dans le README.
+
+Créer un fichier `.env` à partir du modèle `.env.example` :
+
+```bash
+cp .env.example .env
+```
+
+Puis modifier les valeurs selon l’environnement local.
+
+Exemple de variables attendues :
+
+```env
+SECRET_KEY=change-me
+DATABASE_URL=sqlite:///library.db
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=change-me
+LIBRARIAN_USERNAME=biblio
+LIBRARIAN_PASSWORD=change-me
+```
+
+Le fichier `.env` ne doit jamais être poussé sur GitHub.
+
+---
+
+## 7. Base de données
+
+Le projet utilise SQLite pour la démonstration académique. Ce choix facilite l’exécution dans GitHub Codespaces et évite la configuration d’un serveur de base de données externe.
+
+Grâce à SQLAlchemy, une migration future vers PostgreSQL est possible en modifiant principalement la variable `DATABASE_URL`.
+
+Exemple pour PostgreSQL :
+
+```env
+DATABASE_URL=postgresql://user:password@localhost:5432/library_ai
+```
+
+Pour utiliser PostgreSQL dans une version future, il faudra également installer un driver adapté, par exemple :
+
+```bash
+pip install psycopg2-binary
+```
+
+---
+
+## 8. Lancement du projet dans Codespaces
 
 ### Backend
 
@@ -196,32 +261,21 @@ Puis ouvrir le port 5500 dans le navigateur.
 
 ---
 
-## 7. Comptes de test
+## 9. Comptes de démonstration
 
-### Administrateur
+Les comptes de démonstration ne sont pas publiés directement dans le README pour des raisons de sécurité.
 
-```text
-Nom d'utilisateur : admin
-Mot de passe      : Admin@123
-```
-
-### Bibliothécaire
-
-```text
-Nom d'utilisateur : biblio
-Mot de passe      : Biblio@123
-```
+Pour une exécution locale, utiliser le fichier `.env` créé à partir de `.env.example` et définir les identifiants nécessaires.
 
 ---
 
-## 8. Préparation des données
+## 10. Préparation des données
 
 Si le catalogue ou la base est vide, lancer :
 
 ```bash
 cd /workspaces/smart-university-library-ai
 source .venv/bin/activate
-
 PYTHONPATH=backend python backend/bigdata/sync_kaggle_catalog_to_db.py
 PYTHONPATH=backend python backend/seed/seed_admin_user.py
 PYTHONPATH=backend python backend/seed/seed_librarian_user.py
@@ -230,14 +284,32 @@ PYTHONPATH=backend python -c "from seed.seed_operational_data import seed; seed(
 
 ---
 
-## 9. Préparation du modèle de prévision
+## 11. Traitement Big Data avec Apache Spark
 
-Pour reconstruire le dataset et entraîner le modèle :
+Pour générer les features Spark à partir des fichiers Goodbooks-10k :
 
 ```bash
 cd /workspaces/smart-university-library-ai
 source .venv/bin/activate
+PYTHONPATH=backend python backend/bigdata/spark_goodbooks_processing.py
+```
 
+Fichiers générés :
+
+```text
+data/processed/spark_books_features.csv
+data/processed/spark_processing_summary.json
+```
+
+---
+
+## 12. Préparation du modèle de prévision
+
+Pour reconstruire le dataset analytique et entraîner le modèle :
+
+```bash
+cd /workspaces/smart-university-library-ai
+source .venv/bin/activate
 PYTHONPATH=backend python backend/bigdata/build_hybrid_ai_dataset.py
 PYTHONPATH=backend python backend/ml/train_hybrid_demand_model.py
 ```
@@ -248,11 +320,16 @@ Le modèle généré est placé dans :
 backend/ml/models/
 ```
 
-Le fichier modèle ne doit pas être poussé sur GitHub s’il est volumineux.
+Fichiers principaux :
+
+```text
+backend/ml/models/hybrid_demand_model.joblib
+backend/ml/models/hybrid_demand_metrics.json
+```
 
 ---
 
-## 10. Tests rapides
+## 13. Tests rapides
 
 ### Vérifier le backend
 
@@ -280,43 +357,74 @@ curl http://localhost:5000/ml/hybrid/predict/2
 
 ---
 
-## 11. Scénario de démonstration
+## 14. Tests automatisés
 
-1. Se connecter avec le compte administrateur.
-2. Montrer la navigation complète.
-3. Créer un utilisateur bibliothécaire.
-4. Se connecter avec le compte bibliothécaire.
-5. Ouvrir la page Livres.
-6. Mettre à jour le stock d’un livre.
-7. Ouvrir la page Emprunts.
-8. Créer un emprunt.
-9. Retourner un livre.
-10. Ouvrir la page Prévisions et calculer un score.
-11. Montrer le tableau de bord bibliothèque.
+Si `pytest` est installé, lancer :
+
+```bash
+pytest
+```
+
+Un workflow GitHub Actions peut être ajouté dans `.github/workflows/ci.yml` pour exécuter automatiquement les tests à chaque push.
 
 ---
 
-## 12. Points forts du projet
+## 15. Exécution avec Docker
+
+Le projet peut être préparé pour une exécution avec Docker afin de faciliter le déploiement dans un environnement reproductible.
+
+Exemple :
+
+```bash
+docker compose up --build
+```
+
+Cette approche permettrait de lancer l’application sans dépendre directement de la configuration de la machine locale.
+
+---
+
+## 16. Scénario de démonstration
+
+- Se connecter avec le compte administrateur.
+- Montrer la navigation complète.
+- Créer un utilisateur bibliothécaire.
+- Se connecter avec le compte bibliothécaire.
+- Ouvrir la page Livres.
+- Mettre à jour le stock d’un livre.
+- Ouvrir la page Emprunts.
+- Créer un emprunt.
+- Retourner un livre.
+- Ouvrir la page Prévisions et calculer un score.
+- Montrer le tableau de bord bibliothèque.
+- Montrer le traitement Spark et le résumé généré.
+
+---
+
+## 17. Points forts du projet
 
 - Interface claire avec navigation dynamique selon le rôle.
 - Séparation entre administrateur et bibliothécaire.
 - Gestion complète des livres, étudiants, emprunts et stock.
 - Mise à jour immédiate des données métier.
-- Prévisions de demande pour aider à gérer le stock.
+- Pipeline Big Data avec Apache Spark.
+- Prévisions de demande avec un modèle IA.
 - Projet adapté à une démonstration universitaire.
+- Architecture évolutive grâce à SQLAlchemy.
 
 ---
 
-## 13. Améliorations possibles
+## 18. Améliorations possibles
 
 - Ajouter une recherche avancée par catégorie.
 - Ajouter des notifications pour les retards.
 - Ajouter un export PDF des rapports.
 - Ajouter une page de statistiques mensuelles.
-- Ajouter un hébergement cloud complet.
+- Migrer vers PostgreSQL pour une version production.
+- Ajouter davantage de tests automatisés.
+- Déployer avec Docker ou sur une plateforme cloud.
 
 ---
 
-## 14. Auteur
+## 19. Auteur
 
 Projet réalisé par **ILIAS CHAHBOUN**.

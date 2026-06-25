@@ -1,25 +1,32 @@
 import os
-from dotenv import load_dotenv
+from pathlib import Path
 
-load_dotenv()
+BASE_DIR = Path(__file__).resolve().parent
 
 
 class Config:
-    SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret-key")
+    # Flask
+    SECRET_KEY = os.environ.get("SECRET_KEY", "dev-only-key")
 
-    # Base SQLite pour le développement
-    SQLALCHEMY_DATABASE_URI = os.getenv(
+    # Database
+    SQLALCHEMY_DATABASE_URI = os.environ.get(
         "DATABASE_URL",
-        "sqlite:///smart_library.db"
+        f"sqlite:///{BASE_DIR / 'library.db'}"
     )
-
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-    # Pour les prochaines étapes
-    MONGO_URI = os.getenv(
-        "MONGO_URI",
-        "mongodb://localhost:27017/smart_library_logs"
+    # Sessions / Cookies
+    PERMANENT_SESSION_LIFETIME_HOURS = int(
+        os.environ.get("PERMANENT_SESSION_LIFETIME_HOURS", "8")
     )
 
-    REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
-    REDIS_PORT = int(os.getenv("REDIS_PORT", 6379))
+    SESSION_COOKIE_HTTPONLY = True
+    SESSION_COOKIE_SAMESITE = os.environ.get("SESSION_COOKIE_SAMESITE", "None")
+    SESSION_COOKIE_SECURE = os.environ.get("SESSION_COOKIE_SECURE", "true").lower() == "true"
+
+    # Demo accounts
+    ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "admin")
+    ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "change-me")
+
+    LIBRARIAN_USERNAME = os.environ.get("LIBRARIAN_USERNAME", "biblio")
+    LIBRARIAN_PASSWORD = os.environ.get("LIBRARIAN_PASSWORD", "change-me")

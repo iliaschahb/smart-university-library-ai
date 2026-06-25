@@ -48,14 +48,15 @@ app.config.from_object(Config)
 # Session / Auth configuration
 # ================================
 
-app.secret_key = os.getenv("SECRET_KEY", "change-this-secret-key")
+app.secret_key = app.config["SECRET_KEY"]
 
-app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(hours=8)
-app.config["SESSION_COOKIE_HTTPONLY"] = True
+app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(
+    hours=app.config.get("PERMANENT_SESSION_LIFETIME_HOURS", 8)
+)
 
-# IMPORTANT POUR CODESPACES HTTPS
-app.config["SESSION_COOKIE_SAMESITE"] = "None"
-app.config["SESSION_COOKIE_SECURE"] = True
+app.config["SESSION_COOKIE_HTTPONLY"] = app.config.get("SESSION_COOKIE_HTTPONLY", True)
+app.config["SESSION_COOKIE_SAMESITE"] = app.config.get("SESSION_COOKIE_SAMESITE", "None")
+app.config["SESSION_COOKIE_SECURE"] = app.config.get("SESSION_COOKIE_SECURE", True)
 
 # ================================
 # CORS
