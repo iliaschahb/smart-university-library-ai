@@ -27,3 +27,6 @@ _SUCCESS
 *.log
 backend/ml/models/*.pkl
 backend/ml/models/*.model
+
+# Modèles IA générés
+backend/ml/models/*.joblib
